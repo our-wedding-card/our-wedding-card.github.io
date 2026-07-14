@@ -43,10 +43,10 @@ export const ShareButton = () => {
               title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
               description:
                 WEDDING_DATE.format(WEDDING_DATE_FORMAT) + "\n" + LOCATION,
-              imageUrl: pageUrl + "preview_image.png",
-              // 큰 배너 이미지로 표시되도록 실제 크기(1200x800) 명시
-              imageWidth: 1200,
-              imageHeight: 800,
+              // 카카오 규격(최대 800px, <500KB, 2:1)에 맞춘 배너 이미지
+              imageUrl: pageUrl + "kakao_share.jpg",
+              imageWidth: 800,
+              imageHeight: 400,
               link,
             },
             buttons: [
