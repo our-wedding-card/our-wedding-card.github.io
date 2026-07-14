@@ -2,8 +2,6 @@ import {
   BRIDE_FULLNAME,
   GROOM_FULLNAME,
   LOCATION,
-  SHARE_ADDRESS,
-  SHARE_ADDRESS_TITLE,
   WEDDING_DATE,
   WEDDING_DATE_FORMAT,
 } from "../../const"
@@ -30,11 +28,9 @@ export const ShareButton = () => {
             return
           }
 
-          // 카카오톡 공유 전송 (위치 기반 템플릿 사용)
+          // 카카오톡 공유 전송 (피드 템플릿: 청첩장 웹페이지로 링크)
           kakao.Share.sendDefault({
-            objectType: "location",
-            address: SHARE_ADDRESS,
-            addressTitle: SHARE_ADDRESS_TITLE,
+            objectType: "feed",
             content: {
               title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
               description:

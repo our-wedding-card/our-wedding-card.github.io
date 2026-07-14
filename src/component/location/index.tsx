@@ -62,7 +62,8 @@ export const Location = () => {
           <div className="heading">자가용</div>
           <div />
           <div className="content">
-            <b>"하림각"</b> 또는 <b>"HW컨벤션센터"</b> 검색
+            <b>하림각</b> 또는 <b>HW컨벤션센터</b> 검색
+			<br />
             동시주차 500대 가능 (당일무료)
           </div>          
         </div>
