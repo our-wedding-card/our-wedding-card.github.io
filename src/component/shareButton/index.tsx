@@ -28,6 +28,14 @@ export const ShareButton = () => {
             return
           }
 
+          // 청첩장 웹페이지 주소 (모든 링크가 이 페이지로 이동)
+          const pageUrl =
+            window.location.protocol +
+            "//" +
+            window.location.host +
+            baseUrl
+          const link = { mobileWebUrl: pageUrl, webUrl: pageUrl }
+
           // 카카오톡 공유 전송 (피드 템플릿: 청첩장 웹페이지로 링크)
           kakao.Share.sendDefault({
             objectType: "feed",
@@ -35,40 +43,16 @@ export const ShareButton = () => {
               title: `${GROOM_FULLNAME} ❤️ ${BRIDE_FULLNAME}의 결혼식에 초대합니다.`,
               description:
                 WEDDING_DATE.format(WEDDING_DATE_FORMAT) + "\n" + LOCATION,
-              imageUrl:
-                window.location.protocol +
-                "//" +
-                window.location.host +
-                baseUrl +
-                "preview_image.png",
-              link: {
-                mobileWebUrl:
-                  window.location.protocol +
-                  "//" +
-                  window.location.host +
-                  baseUrl,
-                webUrl:
-                  window.location.protocol +
-                  "//" +
-                  window.location.host +
-                  baseUrl,
-              },
+              imageUrl: pageUrl + "preview_image.png",
+              // 큰 배너 이미지로 표시되도록 실제 크기(1200x800) 명시
+              imageWidth: 1200,
+              imageHeight: 800,
+              link,
             },
             buttons: [
               {
-                title: "초대장 보기",
-                link: {
-                  mobileWebUrl:
-                    window.location.protocol +
-                    "//" +
-                    window.location.host +
-                    baseUrl,
-                  webUrl:
-                    window.location.protocol +
-                    "//" +
-                    window.location.host +
-                    baseUrl,
-                },
+                title: "청첩장 보기",
+                link,
               },
             ],
           })
