@@ -23,7 +23,7 @@ function App() {
     const playMusic = () => {
       audioRef.current?.play();
     };
-    document.addEventListener("pointerdown",playMusic,{once: true});
+    document.addEventListener("pointerDown",playMusic,{once: true});
     return () => {
       document.removeEventListener("pointerDown",playMusic);
     };
