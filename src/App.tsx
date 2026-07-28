@@ -1,6 +1,6 @@
 import { Cover } from "./component/cover"
 import { Location } from "./component/location"
-import {useEffect, useRef} from "react";
+import {useRef} from "react";
 import "./App.scss"
 import { BGEffect } from "./component/bgEffect"
 import { Invitation } from "./component/invitation"
@@ -18,16 +18,24 @@ import { ShareButton } from "./component/shareButton"
  */
 function App() {
   
-  const audioRef = useRef<HTMLAudioElement>(null);
-  useEffect(() => {
-    const playMusic = () => {
-      audioRef.current?.play();
-    };
-    document.addEventListener("pointerdown",playMusic,{once: true});
-    return () => {
-      document.removeEventListener("pointerdown",playMusic);
-    };
-  },[]);
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const hasPlayedRef = useRef(false)
+
+  const playMusic = async () => {
+    const audio = audioRef.current
+
+    if (!audio || hasPlayedRef.current) {
+      return
+    }
+
+    try {
+      await audio.play()
+      hasPlayedRef.current = true
+      console.log("배경음악 재생 성공")
+    } catch (error) {
+      console.error("배경음악 재생 실패:", error)
+    }
+  }
   
   return (
     <div className="background">
