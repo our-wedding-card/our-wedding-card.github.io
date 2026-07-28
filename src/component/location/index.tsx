@@ -48,9 +48,13 @@ export const Location = () => {
           <div className="heading">버스</div>
           <div />
           <div className="content">
-            <b>하림각</b> 정류장 하차
+            <b>하림각 정류장</b> 하차
             <br />
             1711, 7016, 7018, 1020, 7022, 7212 (초록지선)
+			<br />
+			<b>상명대 앞</b> 하차, 광화문 방면으로 도보 5분 거리
+            <br />
+            110, 163 (파랑간선)
           </div>
         </div>
 
