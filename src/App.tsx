@@ -23,9 +23,9 @@ function App() {
     const playMusic = () => {
       audioRef.current?.play();
     };
-    document.addEventListener("pointerDown",playMusic,{once: true});
+    document.addEventListener("pointerdown",playMusic,{once: true});
     return () => {
-      document.removeEventListener("pointerDown",playMusic);
+      document.removeEventListener("pointerdown",playMusic);
     };
   },[]);
   
