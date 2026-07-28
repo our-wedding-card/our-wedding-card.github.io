@@ -38,8 +38,12 @@ function App() {
   }
   
   return (
-    <div className="background">
-      
+    <div
+      className="background"
+      onPointerDown={playMusic}
+      onTouchStart={playMusic}
+      onClick={playMusic}
+    >
       <audio
         ref={audioRef}
         src="/music/Wedding.mp3"
