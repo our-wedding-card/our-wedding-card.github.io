@@ -18,6 +18,13 @@ import { ShareButton } from "./component/shareButton"
 function App() {
   return (
     <div className="background">
+      
+      <audio
+        src="/music/Wedding.mp3"
+        autoPlay
+        loop
+      />
+      
       {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
       <BGEffect />
       <div className="card-view">
