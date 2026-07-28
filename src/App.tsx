@@ -8,6 +8,7 @@ import { Gallery } from "./component/gallery"
 import { Information } from "./component/information"
 import { LazyDiv } from "./component/lazyDiv"
 import { ShareButton } from "./component/shareButton"
+import {useEffect, useRef} from "react";
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
@@ -16,13 +17,26 @@ import { ShareButton } from "./component/shareButton"
  * @returns {JSX.Element} 애플리케이션 화면
  */
 function App() {
+  
+  const audioRef = useRef<HTMLAudioElement>(null);
+  useEffect(() => {
+    const playMusic = () => {
+      audioRef.current?.play();
+    };
+    document.addEventListener("pointerdown",playMusic,{once: true});
+    return () => {
+      document.removeEventListener("pointerDown",playMusic);
+    };
+  },[]);
+  
   return (
     <div className="background">
       
       <audio
+        ref={audioRef}
         src="/music/Wedding.mp3"
-        autoPlay
         loop
+        preload="auto"
       />
       
       {/* 배경 애니메이션 효과 (예: 꽃잎 내리기) */}
