@@ -4,6 +4,7 @@ import BusIcon from "../../icons/bus-icon.svg?react"
 import SubwayIcon from "../../icons/subway-icon.svg?react"
 import { LazyDiv } from "../lazyDiv"
 import { LOCATION, LOCATION_ADDRESS } from "../../const"
+import MapGuideImage from "../../images/map_guide.png"
 
 /**
  * 오시는 길 정보를 표시하는 컴포넌트입니다.
@@ -72,6 +73,15 @@ export const Location = () => {
             동시주차 500대 가능 (당일무료)
           </div>          
         </div>
+		  
+		{/* 자가용 약도 */}
+		<div className="map-guide-wrapper">
+		  <img
+		    className="map-guide-image"
+		    src={MapGuideImage}
+		    alt="자가용 이용 약도"
+		  />
+		</div>
       </LazyDiv>
     </>
   )
