@@ -1,5 +1,6 @@
 import { Cover } from "./component/cover"
 import { Location } from "./component/location"
+import {useEffect, useRef} from "react";
 import "./App.scss"
 import { BGEffect } from "./component/bgEffect"
 import { Invitation } from "./component/invitation"
@@ -8,7 +9,6 @@ import { Gallery } from "./component/gallery"
 import { Information } from "./component/information"
 import { LazyDiv } from "./component/lazyDiv"
 import { ShareButton } from "./component/shareButton"
-import {useEffect, useRef} from "react";
 
 /**
  * 메인 애플리케이션 컴포넌트입니다.
