@@ -12,8 +12,6 @@ import gallery10 from "./gallery10.jpg"
 import gallery11 from "./gallery11.jpg"
 import gallery12 from "./gallery12.jpg"
 import gallery13 from "./gallery13.jpg"
-import gallery14 from "./gallery14.jpg"
-import gallery15 from "./gallery15.jpg"
 
 
 /**
@@ -38,6 +36,4 @@ export const GALLERY_IMAGES = [
   gallery11,
   gallery12,
   gallery13,
-  gallery14,
-  gallery15,
 ]
